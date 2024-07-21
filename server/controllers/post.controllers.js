@@ -6,6 +6,8 @@ import Notification from "../models/notification.model.js";
 
 export const createPost = async (req, res) => {
   try {
+    console.log("Request body: ", req.body);
+
     const { text } = req.body;
     let { img } = req.body;
     const userId = req.user._id;
@@ -17,7 +19,9 @@ export const createPost = async (req, res) => {
       return res.status(400).json({ error: "Post must have text or image" });
 
     if (img) {
-      const uploadedResponse = await cloudinary.uploader.upload(img);
+      const uploadedResponse = await cloudinary.uploader.upload(img, {
+        folder: "x-clone",
+      });
       img = uploadedResponse.secure_url;
     }
 
