@@ -74,7 +74,7 @@ export const commentOnPost = async (req, res) => {
       return res.status(400).json({ error: "Text field is required" });
     }
 
-    const post = await Post.findById(postId);
+    const post = await Post.findById(postId.toString());
     if (!post) return res.status(404).json({ error: "Post not found" });
 
     const comment = { user: userId, text };
@@ -102,8 +102,10 @@ export const likeUnlikePost = async (req, res) => {
       // Unlike post
       await Post.updateOne({ _id: postId }, { $pull: { likes: userId } });
       await User.updateOne({ _id: userId }, { $pull: { likes: postId } });
-      
-      const updatedLikes = post.likes.filter((id) => id.toString() !== userId.toString());
+
+      const updatedLikes = post.likes.filter(
+        (id) => id.toString() !== userId.toString()
+      );
       res.status(200).json(updatedLikes);
     } else {
       post.likes.push(userId);
