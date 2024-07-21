@@ -101,7 +101,7 @@ export const likeUnlikePost = async (req, res) => {
     if (userLikedPost) {
       // Unlike post
       await Post.updateOne({ _id: postId }, { $pull: { likes: userId } });
-      await User.updateOne({ _id: userId }, { $pull: { likes: postId } });
+      await User.updateOne({ _id: userId }, { $pull: { likedPost: postId } });
 
       const updatedLikes = post.likes.filter(
         (id) => id.toString() !== userId.toString()
