@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: import.meta.env.API_URL,
+        target: import.meta.env.API_URL_URL,
         changeOrigin: true,
       },
     },
