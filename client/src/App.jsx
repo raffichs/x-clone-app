@@ -19,7 +19,10 @@ function App() {
     queryFn: async () => {
       try {
         const res = await fetch(
-          "https://x-clone-app-theta.vercel.app/api/auth/me"
+          "https://x-clone-app-theta.vercel.app/api/auth/me",
+          {
+            mode: "no-cors",
+          }
         );
         const data = await res.json();
         if (data.error) return null;
