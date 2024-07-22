@@ -13,9 +13,12 @@ const Sidebar = () => {
   const { mutate: logout } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch("/api/auth/logout", {
-          method: "POST",
-        });
+        const res = await fetch(
+          "/https://x-clone-app-theta.vercel.app/api/auth/logout",
+          {
+            method: "POST",
+          }
+        );
         const data = await res.json();
         if (!res.ok) {
           throw new Error(data.error) || "Something went wrong";

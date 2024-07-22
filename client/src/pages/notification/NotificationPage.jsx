@@ -13,7 +13,9 @@ const NotificationPage = () => {
     queryKey: ["notifications"],
     queryFn: async () => {
       try {
-        const res = await fetch("/api/notifications/");
+        const res = await fetch(
+          "/https://x-clone-app-theta.vercel.app/api/notifications/"
+        );
         const data = await res.json();
         if (!res.ok) {
           throw new Error(data.error || "Something went wrong");
@@ -28,9 +30,12 @@ const NotificationPage = () => {
   const { mutate: deleteNotifications } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch("/api/notifications/", {
-          method: "DELETE",
-        });
+        const res = await fetch(
+          "/https://x-clone-app-theta.vercel.app/api/notifications/",
+          {
+            method: "DELETE",
+          }
+        );
         const data = await res.json();
         if (!res.ok) {
           throw new Error(data.error || "Something went wrong");

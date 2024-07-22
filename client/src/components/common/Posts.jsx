@@ -7,13 +7,13 @@ const Posts = ({ feedType, username, userId }) => {
   const getPostEndpoint = () => {
     switch (feedType) {
       case "forYou":
-        return "/api/posts/all";
+        return "/https://x-clone-app-theta.vercel.app/api/posts/all";
       case "following":
-        return "/api/posts/following";
+        return "/https://x-clone-app-theta.vercel.app/api/posts/following";
       case "posts":
-        return `/api/posts/user/${username}`;
+        return `/https://x-clone-app-theta.vercel.app/api/posts/user/${username}`;
       case "likes":
-        return `/api/posts/likes/${userId}`;
+        return `/https://x-clone-app-theta.vercel.app/api/posts/likes/${userId}`;
       default:
         return "api/posts/all";
     }

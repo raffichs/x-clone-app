@@ -24,9 +24,12 @@ const Post = ({ post }) => {
   const { mutate: deletePost, isPending: isDeleting } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`/api/posts/${post._id}`, {
-          method: "DELETE",
-        });
+        const res = await fetch(
+          `/https://x-clone-app-theta.vercel.app/https://x-clone-app-theta.vercel.app/api/posts/${post._id}`,
+          {
+            method: "DELETE",
+          }
+        );
         const data = await res.json();
 
         if (!res.ok) {
@@ -48,9 +51,12 @@ const Post = ({ post }) => {
   const { mutate: likePost, isPending: isLiking } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`/api/posts/like/${post._id}`, {
-          method: "POST",
-        });
+        const res = await fetch(
+          `/https://x-clone-app-theta.vercel.app/api/posts/like/${post._id}`,
+          {
+            method: "POST",
+          }
+        );
         const data = await res.json();
 
         if (!res.ok) {
@@ -80,13 +86,16 @@ const Post = ({ post }) => {
   const { mutate: commentPost, isPending: isCommenting } = useMutation({
     mutationFn: async () => {
       try {
-        const res = await fetch(`/api/posts/comment/${post._id}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ text: comment }),
-        });
+        const res = await fetch(
+          `/https://x-clone-app-theta.vercel.app/api/posts/comment/${post._id}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: comment }),
+          }
+        );
 
         const data = await res.json();
         if (!res.ok) {
@@ -131,7 +140,10 @@ const Post = ({ post }) => {
             to={`/profile/${postOwner.username}`}
             className="w-8 rounded-full overflow-hidden"
           >
-            <img className="aspect-square" src={postOwner.profileImg || "/avatar-placeholder.png"} />
+            <img
+              className="aspect-square"
+              src={postOwner.profileImg || "/avatar-placeholder.png"}
+            />
           </Link>
         </div>
         <div className="flex flex-col flex-1">

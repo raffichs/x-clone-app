@@ -7,9 +7,12 @@ const useFollow = () => {
   const { mutate: followUser, isPending } = useMutation({
     mutationFn: async (userId) => {
       try {
-        const res = await fetch(`/api/users/follow/${userId}`, {
-          method: "POST",
-        });
+        const res = await fetch(
+          `/https://x-clone-app-theta.vercel.app/api/users/follow/${userId}`,
+          {
+            method: "POST",
+          }
+        );
 
         const data = await res.json();
         if (!res.ok) {
@@ -31,7 +34,7 @@ const useFollow = () => {
       toast.error(error.message);
     },
   });
-    
+
   return { followUser, isPending };
 };
 

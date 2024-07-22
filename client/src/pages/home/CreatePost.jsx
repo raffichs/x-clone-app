@@ -21,13 +21,16 @@ const CreatePost = () => {
   } = useMutation({
     mutationFn: async ({ text, img }) => {
       try {
-        const res = await fetch("/api/posts/create", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ text, img }),
-        });
+        const res = await fetch(
+          "/https://x-clone-app-theta.vercel.app/api/posts/create",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text, img }),
+          }
+        );
 
         const data = await res.json();
         if (!res.ok) {
