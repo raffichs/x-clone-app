@@ -25,7 +25,7 @@ const Post = ({ post }) => {
     mutationFn: async () => {
       try {
         const res = await fetch(
-          `/https://x-clone-app-theta.vercel.app/https://x-clone-app-theta.vercel.app/api/posts/${post._id}`,
+          `https://x-clone-app-theta.vercel.apphttps://x-clone-app-theta.vercel.app/api/posts/${post._id}`,
           {
             method: "DELETE",
           }
@@ -52,7 +52,7 @@ const Post = ({ post }) => {
     mutationFn: async () => {
       try {
         const res = await fetch(
-          `/https://x-clone-app-theta.vercel.app/api/posts/like/${post._id}`,
+          `https://x-clone-app-theta.vercel.app/api/posts/like/${post._id}`,
           {
             method: "POST",
           }
@@ -87,7 +87,7 @@ const Post = ({ post }) => {
     mutationFn: async () => {
       try {
         const res = await fetch(
-          `/https://x-clone-app-theta.vercel.app/api/posts/comment/${post._id}`,
+          `https://x-clone-app-theta.vercel.app/api/posts/comment/${post._id}`,
           {
             method: "POST",
             headers: {

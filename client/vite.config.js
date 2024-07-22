@@ -10,6 +10,7 @@ export default defineConfig({
       "/api": {
         target: "https://x-clone-app-theta.vercel.app/",
         changeOrigin: true,
+        secure: true,
       },
     },
   },

@@ -25,7 +25,7 @@ const LoginPage = () => {
     mutationFn: async ({ username, password }) => {
       try {
         const res = await fetch(
-          "/https://x-clone-app-theta.vercel.app/api/auth/login",
+          "https://x-clone-app-theta.vercel.app/api/auth/login",
           {
             method: "POST",
             headers: {

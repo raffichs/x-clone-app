@@ -9,7 +9,7 @@ const useUpdateProfile = () => {
       mutationFn: async (formData) => {
         try {
           const res = await fetch(
-            `/https://x-clone-app-theta.vercel.app/api/users/update`,
+            `https://x-clone-app-theta.vercel.app/api/users/update`,
             {
               method: "POST",
               headers: {

@@ -40,7 +40,7 @@ const ProfilePage = () => {
     queryFn: async () => {
       try {
         const res = await fetch(
-          `/https://x-clone-app-theta.vercel.app/api/users/profile/${username}`
+          `https://x-clone-app-theta.vercel.app/api/users/profile/${username}`
         );
         const data = await res.json();
         if (!res.ok) {

@@ -14,7 +14,7 @@ const Sidebar = () => {
     mutationFn: async () => {
       try {
         const res = await fetch(
-          "/https://x-clone-app-theta.vercel.app/api/auth/logout",
+          "https://x-clone-app-theta.vercel.app/api/auth/logout",
           {
             method: "POST",
           }

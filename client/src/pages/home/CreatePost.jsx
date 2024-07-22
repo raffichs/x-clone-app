@@ -22,7 +22,7 @@ const CreatePost = () => {
     mutationFn: async ({ text, img }) => {
       try {
         const res = await fetch(
-          "/https://x-clone-app-theta.vercel.app/api/posts/create",
+          "https://x-clone-app-theta.vercel.app/api/posts/create",
           {
             method: "POST",
             headers: {

@@ -8,7 +8,7 @@ const useFollow = () => {
     mutationFn: async (userId) => {
       try {
         const res = await fetch(
-          `/https://x-clone-app-theta.vercel.app/api/users/follow/${userId}`,
+          `https://x-clone-app-theta.vercel.app/api/users/follow/${userId}`,
           {
             method: "POST",
           }
