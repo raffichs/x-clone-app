@@ -22,6 +22,7 @@ function App() {
           "https://x-clone-app-theta.vercel.app/api/auth/me",
           {
             credentials: "include",
+            cors: "no-cors",
             headers: {
               "Access-Control-Allow-Origin": "*",
               "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
