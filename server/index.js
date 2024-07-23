@@ -11,6 +11,8 @@ import postRoutes from "./routes/post.routes.js";
 import notificationRoutes from "./routes/notification.routes.js";
 
 import connectMongoDB from "./db/connectMongoDB.js";
+import User from "./models/user.model.js";
+import mongoose from "mongoose";
 
 dotenv.config();
 
@@ -20,6 +22,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+mongoose.connect(process.env.MONGO_url);
 connectMongoDB();
 
 const app = express();
