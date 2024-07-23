@@ -62,6 +62,11 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://x-clone-app-theta.vercel.app"
+  );
+
   try {
     const { username, password } = req.body;
     console.log("Login attempt with username:", username);
