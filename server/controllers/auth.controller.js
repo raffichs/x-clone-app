@@ -66,6 +66,7 @@ export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     console.log("Login attempt with username:", username);
+    console.log("Login attempt with password:", password);
 
     if (!mongoose.connection.readyState) {
       throw new Error("Database not connected");
