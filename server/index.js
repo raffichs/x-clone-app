@@ -47,3 +47,13 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   
 });
+
+app.get("/test-db", async (req, res) => {
+  try {
+    const testUser = await User.findOne();
+    res.status(200).json({ message: "DB Connection Successful", testUser });
+  } catch (error) {
+    res.status(500).json({ message: "DB Connection Failed", error: error.message });
+  }
+});
+

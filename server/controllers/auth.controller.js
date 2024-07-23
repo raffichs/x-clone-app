@@ -64,7 +64,15 @@ export const signup = async (req, res) => {
 export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log("Login attempt with username:", username);
+
+    if (!mongoose.connection.readyState) {
+      throw new Error("Database not connected");
+    }
+
     const user = await User.findOne({ username });
+    console.log("User found:", user);
+
     const isPasswordCorrect = await bcrypt.compare(
       password,
       user?.password || ""
