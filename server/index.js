@@ -12,7 +12,6 @@ import notificationRoutes from "./routes/notification.routes.js";
 
 import connectMongoDB from "./db/connectMongoDB.js";
 import User from "./models/user.model.js";
-import mongoose from "mongoose";
 
 dotenv.config();
 
