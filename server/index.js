@@ -20,6 +20,8 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+connectMongoDB();
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -43,5 +45,5 @@ app.use("/api/notifications", notificationRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  connectMongoDB();
+  
 });
