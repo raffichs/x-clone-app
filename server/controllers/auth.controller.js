@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import { generateTokenAndSetCookie } from "../lib/utils/generateToken.js";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
@@ -67,10 +66,6 @@ export const login = async (req, res) => {
     const { username, password } = req.body;
     console.log("Login attempt with username:", username);
     console.log("Login attempt with password:", password);
-
-    if (!mongoose.connection.readyState) {
-      throw new Error("Database not connected");
-    }
 
     const user = await User.findOne({ username });
     console.log("User found:", user);

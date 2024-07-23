@@ -22,7 +22,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-mongoose.connect(process.env.MONGO_url);
+mongoose.connect(process.env.MONGO_url)
 connectMongoDB();
 
 const app = express();
