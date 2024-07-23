@@ -28,9 +28,10 @@ app.use(express.json({ limit: "5mb" })); // to parse req.body
 app.use(express.urlencoded({ extended: true })); // to parse form data (urlencoded)
 app.use(
   cors({
-    origin: "https://x-clone-app-woad.vercel.app", 
+    origin: "https://x-clone-app-woad.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 
