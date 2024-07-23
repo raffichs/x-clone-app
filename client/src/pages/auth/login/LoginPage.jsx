@@ -29,7 +29,7 @@ const LoginPage = () => {
           {
             credentials: "include",
             method: "POST",
-            mode: "same-origin",
+            mode: "cors",
             headers: {
               "Content-Type": "application/json",
             },
