@@ -21,13 +21,7 @@ function App() {
         const res = await fetch(
           "https://x-clone-app-theta.vercel.app/api/auth/me",
           {
-            credentials: "include",
             mode: "no-cors",
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-              "Access-Control-Allow-Headers": "Content-Type, Authorization",
-            },
           }
         );
         const data = await res.json();

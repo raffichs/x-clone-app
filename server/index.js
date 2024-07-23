@@ -43,13 +43,6 @@ app.use(function (req, res, next) {
   );
   next();
 });
-app.UseCors((x) =>
-  x
-    .AllowAnyMethod()
-    .AllowAnyHeader()
-    .SetIsOriginAllowed((origin) => true) // allow any origin
-    .AllowCredentials()
-);
 
 app.use(cookieParser());
 
