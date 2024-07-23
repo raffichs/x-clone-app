@@ -27,7 +27,7 @@ const LoginPage = () => {
         const res = await fetch(
           "https://x-clone-app-theta.vercel.app/api/auth/login",
           {
-            credentials: "omit",
+            credentials: "include",
             method: "POST",
             mode: "cors",
             headers: {

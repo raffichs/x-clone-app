@@ -36,7 +36,7 @@ app.use(
 );
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "https://x-clone-app-theta.vercel.app");
   // another common pattern
   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
   res.setHeader(
@@ -47,7 +47,7 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
-  
+
   if (req.method === "OPTIONS") {
     return res.status(200).json({
       body: "OK",
