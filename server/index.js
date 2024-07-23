@@ -36,7 +36,7 @@ app.use(
 );
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "https://x-clone-app-theta.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "https://x-clone-app-theta.vercel.app/");
   // another common pattern
   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
   res.setHeader(
