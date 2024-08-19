@@ -22,7 +22,7 @@ function App() {
           "https://x-clone-app-theta.vercel.app/api/auth/me",
           {
             mode: "cors",
-            // credentials: "include",
+            credentials: "include",
           }
         );
         const data = await res.json();
