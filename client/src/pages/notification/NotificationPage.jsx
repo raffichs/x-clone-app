@@ -14,7 +14,12 @@ const NotificationPage = () => {
     queryFn: async () => {
       try {
         const res = await fetch(
-          "https://x-clone-app-theta.vercel.app/api/notifications/"
+          "https://x-clone-app-theta.vercel.app/api/notifications/",
+          {
+            credentials: "include",
+            method: "GET",
+            mode: "cors",
+          }
         );
         const data = await res.json();
         if (!res.ok) {
@@ -33,7 +38,9 @@ const NotificationPage = () => {
         const res = await fetch(
           "https://x-clone-app-theta.vercel.app/api/notifications/",
           {
+            credentials: "include",
             method: "DELETE",
+            mode: "cors",
           }
         );
         const data = await res.json();

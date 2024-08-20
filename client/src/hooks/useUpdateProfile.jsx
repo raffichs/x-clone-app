@@ -11,7 +11,9 @@ const useUpdateProfile = () => {
           const res = await fetch(
             `https://x-clone-app-theta.vercel.app/api/users/update`,
             {
+              credentials: "include",
               method: "POST",
+              mode: "cors",
               headers: {
                 "Content-Type": "application/json",
               },

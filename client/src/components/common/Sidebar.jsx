@@ -16,7 +16,9 @@ const Sidebar = () => {
         const res = await fetch(
           "https://x-clone-app-theta.vercel.app/api/auth/logout",
           {
+            credentials: "include",
             method: "POST",
+            mode: "cors",
           }
         );
         const data = await res.json();

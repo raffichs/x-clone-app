@@ -10,7 +10,9 @@ const useFollow = () => {
         const res = await fetch(
           `https://x-clone-app-theta.vercel.app/api/users/follow/${userId}`,
           {
+            credentials: "include",
             method: "POST",
+            mode: "cors",
           }
         );
 

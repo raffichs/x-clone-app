@@ -29,7 +29,9 @@ const SignUpPage = () => {
         const res = await fetch(
           "https://x-clone-app-theta.vercel.app/api/auth/signup",
           {
+            credentials: "include",
             method: "POST",
+            mode: "cors",
             headers: {
               "Content-Type": "application/json",
             },

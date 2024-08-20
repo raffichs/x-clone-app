@@ -27,7 +27,9 @@ const Post = ({ post }) => {
         const res = await fetch(
           `https://x-clone-app-theta.vercel.apphttps://x-clone-app-theta.vercel.app/api/posts/${post._id}`,
           {
+            credentials: "include",
             method: "DELETE",
+            mode: "cors",
           }
         );
         const data = await res.json();
@@ -54,7 +56,9 @@ const Post = ({ post }) => {
         const res = await fetch(
           `https://x-clone-app-theta.vercel.app/api/posts/like/${post._id}`,
           {
+            credentials: "include",
             method: "POST",
+            mode: "cors",
           }
         );
         const data = await res.json();
@@ -89,7 +93,9 @@ const Post = ({ post }) => {
         const res = await fetch(
           `https://x-clone-app-theta.vercel.app/api/posts/comment/${post._id}`,
           {
+            credentials: "include",
             method: "POST",
+            mode: "cors",
             headers: {
               "Content-Type": "application/json",
             },
