@@ -25,7 +25,7 @@ const Post = ({ post }) => {
     mutationFn: async () => {
       try {
         const res = await fetch(
-          `https://x-clone-app-theta.vercel.apphttps://x-clone-app-theta.vercel.app/api/posts/${post._id}`,
+          `https://x-clone-app-theta.vercel.app/api/posts/${post._id}`,
           {
             credentials: "include",
             method: "DELETE",
