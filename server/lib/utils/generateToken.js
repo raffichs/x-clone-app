@@ -5,12 +5,12 @@ export const generateTokenAndSetCookie = (userId, res) => {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
       expiresIn: "15d",
     });
-    
+
     res.cookie("jwt", token, {
       maxAge: 1296000000,
       httpOnly: true,
-      sameSite: "strict",
-      secure: process.env.NODE_ENV !== "development",
+      sameSite: "none",
+      secure: true,
     });
 
     console.log("Cookie set with token:", token);
