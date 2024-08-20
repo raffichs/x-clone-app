@@ -15,7 +15,7 @@ const Posts = ({ feedType, username, userId }) => {
       case "likes":
         return `https://x-clone-app-theta.vercel.app/api/posts/likes/${userId}`;
       default:
-        return "api/posts/all";
+        return "https://x-clone-app-theta.vercel.app/api/posts/all";
     }
   };
 
@@ -30,7 +30,11 @@ const Posts = ({ feedType, username, userId }) => {
     queryKey: ["posts"],
     queryFn: async () => {
       try {
-        const res = await fetch(POST_ENDPOINT);
+        const res = await fetch(POST_ENDPOINT, {
+          credentials: "include",
+          method: "GET",
+          mode: "cors",
+        });
         const data = await res.json();
         if (!res.ok) {
           throw new Error(data.error) || "Something went wrong";

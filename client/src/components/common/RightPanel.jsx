@@ -12,7 +12,12 @@ const RightPanel = () => {
     queryFn: async () => {
       try {
         const res = await fetch(
-          "https://x-clone-app-theta.vercel.app/api/users/suggested"
+          "https://x-clone-app-theta.vercel.app/api/users/suggested",
+          {
+            credentials: "include",
+            method: "GET",
+            mode: "cors",
+          }
         );
         const data = await res.json();
         if (!res.ok) {
